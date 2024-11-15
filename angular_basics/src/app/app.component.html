@@ -1,10 +1,57 @@
-<h1>This is the title of the Page {{title}}</h1>
-<h3>My name is {{name}} </h3>
-<h4>This is an object example</h4>
-{{ 'ID -> ' + person.id + ' Name -> ' + person.name + ' Age ' + person.age }}
+<!-- 
+show the use of ngModel
+-->
 
+<h1 style="color: {{color_red}}">This is the example of interpolation. We simply use curly brackets to display the value from a variable {{title}}</h1>
+<h3>My name is {{name}} </h3>
+<h4>This is an example of interpolation to access the values from an object along with string to show concatenation(combining string with variable)</h4>
+{{ 'ID =' + person.id + ' Name = ' + person.name + ' Age = ' + person.age }}
+
+<app-home></app-home>
 
 <ul>
-  <li *ngFor="let person of persons">{{person.name}}</li>
+  <li *ngFor="let person of persons">{{person.id}}. {{person.name}} is {{person.age}} year old</li>
 </ul>
 
+<ul>
+  <li *ngFor="let person of persons">{{ person.id + ' ' + person.name + ' is ' + person.age + ' year old'}}</li>
+</ul>
+
+<h2>
+  Two ways of displaying values from a variable in Angular
+</h2>
+<div>
+  <h3 style="color: {{color_red }};">This is an example of interpolation. Basically you try to display your variable value from .ts file by using the variable name inside curly brackets.</h3>
+  Title <input type="text" value="{{title}}">
+  <button (click)="userSaved()">Submit</button>
+</div>
+
+<div>  
+  <h3 [style.color]="color_red">This is an example of data binding</h3>
+  Title <input type="text" [value]="title">
+  <button [disabled]="isDisabled">Submit</button>
+</div>
+
+<div>
+  <h3>NgModel Example using Property binding</h3>
+
+  <input type="text" [ngModel]="title">
+</div>
+
+<div>
+  <h3>NgModel Example using Two way binding</h3>
+
+  <input type="text" [(ngModel)]="title">
+</div>
+
+
+<div>
+  <h2 [ngClass]="bg_color_class">Adding Image using interpolation</h2>
+  <img src="{{imageUrl}}" alt="Image not found">  
+</div>
+
+
+<div>
+  <h2 class="bg_color">Adding Image using data binding</h2>
+  <img [src]="imageUrl" alt="Image not found">  
+</div>
