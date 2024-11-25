@@ -1,1 +1,10 @@
-<h2>This is the text from home component!</h2>
+<h2>Home component!</h2>
+
+
+<ul>
+    <li *ngFor="let s of students">{{s.id + '. ' + s.name}}</li>
+</ul>
+
+<h2>Home component ends!</h2>
+
+<app-students></app-students>

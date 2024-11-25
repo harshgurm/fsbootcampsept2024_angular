@@ -9,7 +9,8 @@ show the use of ngModel
 
 <app-home></app-home>
 
-<ul>
+<ul *ngIf="persons.length > 0">
+  <div>This content is still visible</div>
   <li *ngFor="let person of persons">{{person.id}}. {{person.name}} is {{person.age}} year old</li>
 </ul>
 

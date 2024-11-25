@@ -21,7 +21,7 @@ export class AppComponent {
 
   constructor(){
     console.log('The constructor is called');
-    this.persons = this.personService.getPersons();
+    // this.persons = this.personService.getPersons();
     console.log(this.persons);
   }
 
