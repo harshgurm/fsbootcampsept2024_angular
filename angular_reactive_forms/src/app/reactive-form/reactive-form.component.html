@@ -22,6 +22,11 @@
                 *ngIf="employeeForm.get('password')?.touched && employeeForm.get('password')?.errors?.['minlength']">
                 Password must be 6 characters
             </div>
+
+            <div class="text-danger"
+                *ngIf="employeeForm.get('password')?.touched && employeeForm.get('password')?.errors?.['weakPassword']">
+                Please provide a strong password
+            </div>
         </div>
 
         <div class="mb-3">
