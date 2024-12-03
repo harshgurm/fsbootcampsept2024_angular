@@ -9,6 +9,10 @@ export const routes: Routes = [
         component: ReactiveFormComponent
     },
     {
+        path: 'add_employee/:id',
+        component: ReactiveFormComponent
+    },
+    {
         path: 'employees',
         component: EmployeesComponent
     },
