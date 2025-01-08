@@ -1,0 +1,19 @@
+<div class="container">
+    <form #signInForm="ngForm" (ngSubmit)="signInUser(signInForm)">
+        <!-- Email input -->
+        <div data-mdb-input-init class="form-outline mb-4 col-sm-3">
+            <label class="form-label" for="form2Example1">Email address</label>
+            <input type="email" name="email" class="form-control col-sm-3" [(ngModel)]="signInDetails.email" />
+        </div>
+
+        <!-- Password input -->
+        <div data-mdb-input-init class="form-outline mb-4 col-sm-3">
+            <label class="form-label" for="form2Example2">Password</label>
+            <input type="password" name="password" class="form-control col-sm-3" [(ngModel)]="signInDetails.password"/>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block ms-1">Sign In</button>
+        <button type="button" [routerLink]="'/signup'" data-mdb-button-init data-mdb-ripple-init class="btn btn-warning btn-block ms-2">Sign Up</button>
+    </form>
+</div>

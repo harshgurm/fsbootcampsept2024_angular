@@ -1,0 +1,31 @@
+<!-- Add a form with below input values:
+password, first_name, last_name, email  -->
+<div class="container">
+    <form #signUpForm="ngForm" (ngSubmit)="signUp(signUpForm)">
+        <!-- Email input -->
+        <div data-mdb-input-init class="form-outline mb-4 col-sm-3">
+            <label class="form-label">Email address</label>
+            <input type="email" name="email" class="form-control col-sm-3" [(ngModel)]="signUpDetails.email"/>
+        </div>
+
+        <!-- Password input -->
+        <div data-mdb-input-init class="form-outline mb-4 col-sm-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control col-sm-3" [(ngModel)]="signUpDetails.password"/>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4 col-sm-3">
+            <label class="form-label" >First Name</label>
+            <input type="text" name="first_name" class="form-control col-sm-3" [(ngModel)]="signUpDetails.first_name"/>
+        </div>
+
+        <div data-mdb-input-init class="form-outline mb-4 col-sm-3">
+            <label class="form-label">Last Name</label>
+            <input type="text" name="last_name" class="form-control col-sm-3" [(ngModel)]="signUpDetails.last_name"/>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block ms-1">Sign Up</button>
+        <button type="button" [routerLink]="'/signin'" data-mdb-button-init data-mdb-ripple-init class="btn btn-warning btn-block ms-2">Cancel</button>
+    </form>
+</div>
