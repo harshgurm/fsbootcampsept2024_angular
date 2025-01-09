@@ -19,6 +19,7 @@ export class SignupComponent {
   signUpDetails = {
     email: '',
     password: '',
+    confirm_password: '',
     first_name: '',
     last_name: ''
   }

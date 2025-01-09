@@ -17,10 +17,14 @@ app.get('/', verifyUser, (req, res) => {
 
 //register/sign up api
 app.post('/register/', async (req, res) => {
-    const { password, first_name, last_name, email } = req.body;
+    const { password, confirm_password, first_name, last_name, email } = req.body;
 
-    if (!first_name || !password || !email) {
-        return res.json({ error: true, message: "Please provide all the required values" });
+    if (!first_name || !password || !email || !confirm_password) {
+        return res.status(400).json({ error: true, message: "Please provide all the required values" });
+    }
+
+    if(password != confirm_password){
+        return res.status(400).json({error:true, message: "Password doesn't match"});
     }
 
     //convert or hashed or encrypt the password

@@ -15,6 +15,12 @@ password, first_name, last_name, email  -->
         </div>
 
         <div data-mdb-input-init class="form-outline mb-4 col-sm-3">
+            <label class="form-label">Confirm Password</label>
+            <input type="password" name="confirm_password" class="form-control col-sm-3" [(ngModel)]="signUpDetails.confirm_password"/>
+        </div>
+
+
+        <div data-mdb-input-init class="form-outline mb-4 col-sm-3">
             <label class="form-label" >First Name</label>
             <input type="text" name="first_name" class="form-control col-sm-3" [(ngModel)]="signUpDetails.first_name"/>
         </div>

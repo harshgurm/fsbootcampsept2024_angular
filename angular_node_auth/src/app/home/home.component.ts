@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+
+  router:Router = inject(Router);
+
+  logOut(){
+    localStorage.removeItem('token');
+    this.router.navigate(['signin']);
+  }
 
 }
