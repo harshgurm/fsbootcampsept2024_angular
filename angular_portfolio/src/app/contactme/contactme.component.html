@@ -1,0 +1,95 @@
+<section id="contact" class="contact">
+    <div class="section-heading text-center">
+        <h2>contact me</h2>
+    </div>
+    <div class="container">
+        
+        <div class="alert alert-success alert-dismissible" *ngIf="email_success">
+            <button class="close" (click)="closePopUp()">&times;</button>
+            <strong>Success!</strong> Email sent successfully!!!!!!
+        </div>
+
+        <div class="alert alert-danger alert-dismissible" *ngIf="email_error">
+            <button class="close" (click)="closePopUp()">&times;</button>
+            <strong>Error!</strong> Email failed!!!!!! {{ error_message }}
+        </div>
+
+        <div class="contact-content">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-5 col-sm-6">
+                    <div class="single-contact-box">
+                        <div class="contact-form">
+                            <form #emailForm="ngForm" (ngSubmit)="sendEmail(emailForm)">
+                                <div class="row">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="to_email" placeholder="Email*"
+                                                name="to_email" [(ngModel)]="emailDetails.to_email">
+                                        </div><!--/.form-group-->
+                                    </div><!--/.col-->
+                                </div><!--/.row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="subject" placeholder="Subject"
+                                                name="subject" [(ngModel)]="emailDetails.subject">
+                                        </div><!--/.form-group-->
+                                    </div><!--/.col-->
+                                </div><!--/.row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="8" id="comment" name="message"
+                                                placeholder="Message" [(ngModel)]="emailDetails.message"></textarea>
+                                        </div><!--/.form-group-->
+                                    </div><!--/.col-->
+                                </div><!--/.row-->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="single-contact-btn">
+                                            <button type="submit" class="contact-btn">Submit</button>
+                                        </div><!--/.single-single-contact-btn-->
+                                    </div><!--/.col-->
+                                </div><!--/.row-->
+                            </form><!--/form-->
+                        </div><!--/.contact-form-->
+                    </div><!--/.single-contact-box-->
+                </div><!--/.col-->
+                <div class="col-md-offset-1 col-md-5 col-sm-6">
+                    <div class="single-contact-box">
+                        <div class="contact-adress">
+                            <div class="contact-add-head">
+                                <h3>browny star</h3>
+                                <p>uI/uX designer</p>
+                            </div>
+                            <div class="contact-add-info">
+                                <div class="single-contact-add-info">
+                                    <h3>phone</h3>
+                                    <p>987-123-6547</p>
+                                </div>
+                                <div class="single-contact-add-info">
+                                    <h3>email</h3>
+                                    <p>{{email}}</p>
+                                </div>
+                                <div class="single-contact-add-info">
+                                    <h3>website</h3>
+                                    <p>www.brownsine.com</p>
+                                </div>
+                            </div>
+                        </div><!--/.contact-adress-->
+                        <div class="hm-foot-icon">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li><!--/li-->
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li><!--/li-->
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li><!--/li-->
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li><!--/li-->
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li><!--/li-->
+                            </ul><!--/ul-->
+                        </div><!--/.hm-foot-icon-->
+                    </div><!--/.single-contact-box-->
+                </div><!--/.col-->
+            </div><!--/.row-->
+        </div><!--/.contact-content-->
+    </div><!--/.container-->
+
+</section>
