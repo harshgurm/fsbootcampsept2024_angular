@@ -8,6 +8,16 @@
                     <span class="h1 fw-bold mb-0">Logo</span>
                 </div>
 
+                <div class="toast show ms-xl-4 mt-5 text-bg-danger" *ngIf="errors.error">
+                    <div class="toast-header">
+                      <strong class="me-auto">Errors</strong>
+                      <button type="button" class="btn-close" (click)="closePopUp()"></button>
+                    </div>
+                    <div class="toast-body" *ngIf="errors.message">
+                      <p>{{ errors.message }}</p>
+                    </div>
+                </div>
+
                 <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
                     <form style="width: 23rem;" #signInForm="ngForm" (ngSubmit)="signInUser(signInForm)">
