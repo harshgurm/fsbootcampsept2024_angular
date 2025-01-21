@@ -32,22 +32,15 @@ export class SigninComponent {
     console.log(data);
     if(data.form.valid){
       this.dataService.signIn(data.form.value).subscribe({
-        next: (results) => {
-          console.log(results);
+        next: (results:any) => {
+          localStorage.setItem('token', results.token);
+          this.router.navigate(['home'])
         },
         error:(errors) => {
           this.errors.error = true;
           this.errors.message = errors.error.message;
         }
       }
-        
-      //   (result:any) => {
-      //   if(result.status == 'success'){
-      //     //redirect to home page
-      //     localStorage.setItem('token', result.token);
-      //     this.router.navigate(['home'])
-      //   }
-      // }
     )
     }
   }

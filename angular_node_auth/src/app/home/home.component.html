@@ -1,2 +1,10 @@
-<p>Welcome to the home page</p>
-<button class="btn btn-primary" (click)="logOut()">Log Out</button>
+<section>
+    <form action="">
+        <input type="text" placeholder="Filter by city">
+        <button class="btn btn-warning primary ms-3" type="button">Search</button>
+        <button class="btn btn-primary ms-xl-4" (click)="logOut()">Log Out</button>
+    </form>
+</section>
+<section class="results">
+    <app-housing-location *ngFor="let housingLocation of housingLocationList" [housingLocation]="housingLocation"></app-housing-location>
+</section>
